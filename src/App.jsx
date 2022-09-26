@@ -37,21 +37,24 @@ function App() {
   },
     [coords])
 
+    
   useEffect(() => {
-    if (weather)
-     { const data= (weather.weather[0].description).split("")
-       const words= data.filter(a=> a != " ")
-       const wordstogether=words.reduce((a,b)=>a+b)
-      setbackground(images[wordstogether])}}
+    if (weather) {
+      const data = (weather.weather[0].description).split("")
+      const words = data.filter(a => a != " ")
+      const wordstogether = words.reduce((a, b) => a + b)
+      setbackground(images[wordstogether])
+    }
+  }
     , [weather])
 
   return (
-    <div style={{ backgroundImage:`url(${background})`} } className='card_first'>
-    <div  className='App'>
-      {arrive ? <img className='image' src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!c1024wm0" alt="loading" /> :
-        <WeatherCard
-          weather={weather} />}
-    </div>
+    <div style={{ backgroundImage: `url(${background})` }} className='card_first'>
+      <div className='App'>
+        {arrive ? <img className='image' src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!c1024wm0" alt="loading" /> :
+          <WeatherCard
+            weather={weather} />}
+      </div>
     </div>
   )
 }

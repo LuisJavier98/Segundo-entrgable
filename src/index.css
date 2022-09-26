@@ -6,4 +6,5 @@ h1 {
 .image{
     width: 75vw;
     height: 75vh;
+    color: gray;
 }
