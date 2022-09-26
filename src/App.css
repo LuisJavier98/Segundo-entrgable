@@ -1,0 +1,72 @@
+body{
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+.card_first {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+
+.card_title {
+    text-align: center;
+}
+
+.card_subtitle {
+    text-align: center;
+}
+
+.card_weather {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10vw;
+    box-shadow: 3px 3px 10px 3px;
+}
+
+.card_properties {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.card_data {
+    display: flex;
+    gap: 1%;
+}
+
+.card_data div {
+    text-align: center;
+}
+
+.card_temp {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.card_button {
+    width: 50%;
+    align-self: center;
+    font-size: 8px;
+    box-shadow: 3px 3px 10px 3px;
+    margin: 10%;
+
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+}
+
+.card_button:hover {
+    box-shadow: 1px 1px 10px 1px;
+    transition: 0.5s all;
+}
