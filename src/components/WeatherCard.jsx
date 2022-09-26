@@ -22,7 +22,7 @@ const WeatherCard = ({ weather }) => {
         </ul>
       </div>
       <div className='card_temp'>{degree ? `${(weather?.main.temp - 273.15).toFixed(1)}°C` : `${(((weather?.main.temp - 273.15) * 1.8) + 32).toFixed(1)}°F`} </div>
-      <button className='card_button' onClick={change}>{degree ? "Change to °F" : "Degrees°C"}</button>
+      <button className='card_button' onClick={change}>{degree ? "Change to °F" : "Change to°C"}</button>
     </div >
   )
 }
