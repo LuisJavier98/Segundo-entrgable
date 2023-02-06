@@ -1,19 +1,35 @@
-body{
+body {
     margin: 0px;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.App {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5rem;
+    box-shadow: 3px 3px 10px 3px;
+    font-size: 14px;
+    background-color: rgb(0, 0, 0, 0.5);
+    gap: 20px
+}
+
 .card_first {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
     box-sizing: border-box;
-    font-size: 10px;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 
 
@@ -28,10 +44,7 @@ body{
 .card_weather {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10vw;
-    box-shadow: 3px 3px 10px 3px;
+
 }
 
 .card_properties {
@@ -58,17 +71,61 @@ body{
 .card_button {
     width: 50%;
     align-self: center;
-    font-size: 8px;
+    font-size: 14px;
     box-shadow: 3px 3px 10px 3px;
     margin: 10%;
 
     cursor: pointer;
 }
-ul{
+
+ul {
     list-style: none;
 }
 
 .card_button:hover {
     box-shadow: 1px 1px 10px 1px;
     transition: 0.5s all;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.formulario select {
+    all: unset;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: black;
+}
+
+.formulario input {
+    background-color: gray;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.formulario input:hover {
+    background-color: rgb(78, 78, 78);
+    transition: all 300ms;
+}
+
+@media (min-width:768px) {
+    .card_weather {
+        font-size: 18px;
+    }
+
+    .card_button {
+        font-size: 18px;
+    }
 }
