@@ -22,6 +22,8 @@ function App() {
   }
 
 
+
+
   useEffect(() => {
     if (resultado) {
       const APIKEY = "f9e25a887beeb8dbb24a58676f19b482"
@@ -37,10 +39,9 @@ function App() {
 
 
   useEffect(() => {
-    if (coord) {
+    if (coord[0] && coord[1]) {
       const APIKEY = "f9e25a887beeb8dbb24a58676f19b482"
       const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${coord[0]}&lon=${coord[1]}&appid=${APIKEY}`
-
       axios.get(URL)
         .then(res => {
           setweather(res.data),

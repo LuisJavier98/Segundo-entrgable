@@ -61,13 +61,13 @@ const Formulario = ({ setweather, handleDatos, datos, setresultado, resultado })
     <form onSubmit={handleResultado} className="formulario">
       {alert && <div className="mensaje">Todos los campos son obligatorios</div>}
       <label >Pais</label>
-      <select name="pais" id="" onChange={e => { handleDatos(e), setcities() }}>
-        <option disabled selected value="">-- Seleccione un pais --</option>
+      <select name="pais" defaultValue="" id="" onChange={e => { handleDatos(e), setcities() }}>
+        <option disabled value="">-- Seleccione un pais --</option>
         {countries?.map(country => <option key={country.country_name} value={[country.country_short_name, country.country_name]}>{country.country_name} </option>)}
       </select>
       <label >Ciudad</label>
-      <select name="ciudad" onChange={e => handleDatos(e)}  >
-        <option selected value="" >-- Seleccione una ciudad --</option>
+      <select name="ciudad" defaultValue="" onChange={e => handleDatos(e)}  >
+        <option value="" >-- Seleccione una ciudad --</option>
         {cities?.map(city => <option key={city.state_name} value={city.state_name}>{city.state_name}</option>)}
       </select>
       <input type="submit" value='CONSULTAR CLIMA' />
