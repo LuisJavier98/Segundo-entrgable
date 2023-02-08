@@ -46,6 +46,7 @@ const Formulario = ({ setweather, handleDatos, datos, setresultado, resultado })
     }
     else {
       setresultado(datos)
+      setalert()
       if (Object.values(resultado).includes(datos.pais) && Object.values(resultado).includes(datos.ciudad)) {
         window.alert('Actualmente te encuentras observando la peticion que quieres')
       }

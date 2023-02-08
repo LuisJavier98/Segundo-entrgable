@@ -69,6 +69,7 @@ function App() {
     Card.current.style.transitionDuration = ''
   }
 
+
   return (
     <div style={{ backgroundImage: `url(${background})` }} className='card_first'>
       <div ref={Card} onMouseMove={tiltEffect} onMouseOut={disableAnimation} className='App'>
