@@ -61,13 +61,12 @@ function App() {
     const perspectiveY = e.clientY - marginY - (e.target.clientHeight / 2)
     Card.current.style.transitionTimingFunction = 'ease-out'
     Card.current.style.transitionDuration = '300ms'
-    Card.current.style.transform = `perspective(2300px) rotateX(${-perspectiveY / 20}deg) rotateY(${perspectiveX / 20}deg) `
+    Card.current.style.transform = `perspective(2300px) translate3d(0,0,100px) rotateX(${-perspectiveY / 15}deg) rotateY(${perspectiveX / 15}deg) `
   }
   const disableAnimation = e => {
     Card.current.style.transform = ''
     Card.current.style.transitionTimingFunction = ''
     Card.current.style.transitionDuration = ''
-
   }
 
   return (
