@@ -12,8 +12,12 @@ body {
     box-shadow: 3px 3px 10px 3px;
     font-size: 14px;
     background-color: rgb(0, 0, 0, 0.8);
-    gap: 30px
+    gap: 30px;
+    transform-style: preserve-3d;
+    transition: all 500ms;
+    cursor: crosshair;
 }
+
 
 .card_first {
     height: 100vh;

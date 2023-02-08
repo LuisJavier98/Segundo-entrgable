@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import axios from 'axios'
 import WeatherCard from './components/WeatherCard'
@@ -9,6 +9,7 @@ function App() {
   const [resultado, setresultado] = useState()
   const [weather, setweather] = useState()
   const [change, setchange] = useState(true)
+  const Card = useRef()
 
 
   const [datos, setdatos] = useState({
@@ -53,9 +54,25 @@ function App() {
 
   const background = useMemo(() => img[weather?.weather[0].main], [change])
 
+  const tiltEffect = e => {
+    const marginX = (window.innerWidth - e.target.clientWidth) / 2
+    const marginY = (window.innerHeight - e.target.clientHeight) / 2
+    const perspectiveX = e.clientX - marginX - (e.target.clientWidth / 2)
+    const perspectiveY = e.clientY - marginY - (e.target.clientHeight / 2)
+    Card.current.style.transitionTimingFunction = 'ease-out'
+    Card.current.style.transitionDuration = '300ms'
+    Card.current.style.transform = `perspective(2300px) rotateX(${-perspectiveY / 20}deg) rotateY(${perspectiveX / 20}deg) `
+  }
+  const disableAnimation = e => {
+    Card.current.style.transform = ''
+    Card.current.style.transitionTimingFunction = ''
+    Card.current.style.transitionDuration = ''
+
+  }
+
   return (
     <div style={{ backgroundImage: `url(${background})` }} className='card_first'>
-      <div className='App'>
+      <div ref={Card} onMouseMove={tiltEffect} onMouseOut={disableAnimation} className='App'>
         <WeatherCard
           weather={weather} resultado={resultado} datos={datos} setweather={setweather} handleDatos={handleDatos} setresultado={setresultado} />
       </div>

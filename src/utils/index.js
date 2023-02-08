@@ -1,5 +1,3 @@
-
-
 export async function obtenerCity(datos, token) {
   const respuesta = await fetch(`https://www.universal-tutorial.com/api/states/${datos.pais.split(',')[1]}`, {
     headers: {
